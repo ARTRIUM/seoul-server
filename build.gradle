@@ -1,0 +1,36 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.4'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.artrium'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '21'
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	// DB 관련 의존은 DB 붙일 때 해제하기. 지금 풀면 config 정보 없다고 에러.
+//	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+//	runtimeOnly 'com.mysql:mysql-connector-j'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
