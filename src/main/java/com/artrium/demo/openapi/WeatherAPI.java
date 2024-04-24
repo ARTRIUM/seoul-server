@@ -7,6 +7,10 @@ import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDate;
 
+/**
+ * 날씨 Open API
+ * https://www.data.go.kr/data/15084084/openapi.do?recommendDataYn=Y
+ */
 public class WeatherAPI {
 
     private static final String domain = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?";
