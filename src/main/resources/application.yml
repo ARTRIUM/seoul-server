@@ -33,7 +33,7 @@ spring:
       on-profile: prod
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://mydatabase.czogkye88fqc.ap-northeast-2.rds.amazonaws.com:3306/prod
+    url: jdbc:mysql://mydatabase.czogkye88fqc.ap-northeast-2.rds.amazonaws.com:3306/seoul
     username: artrium
     password: 12345678
   jpa:
