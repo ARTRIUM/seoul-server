@@ -13,6 +13,8 @@ public class Culture {
     @Column(name = "culture_id", updatable = false)
     private Long id;
 
+    private String category;
+
     @Column(name = "gu_name", updatable = false)
     private String guName;
 
