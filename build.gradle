@@ -26,9 +26,10 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	// DB 관련 의존은 DB 붙일 때 해제하기. 지금 풀면 config 정보 없다고 에러.
-//	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-//	runtimeOnly 'com.mysql:mysql-connector-j'
+
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'com.h2database:h2'
+	runtimeOnly 'com.mysql:mysql-connector-j'
 }
 
 jar {

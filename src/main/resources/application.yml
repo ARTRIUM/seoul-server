@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    group:
+      local: local
+      prod: prod
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:~/test
+server:
+  port: 8080
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://mydatabase.czogkye88fqc.ap-northeast-2.rds.amazonaws.com:3306/prod
+    username: artrium
+    password: 12345678
+server:
+  port: 8080
