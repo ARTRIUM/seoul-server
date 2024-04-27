@@ -1,4 +1,4 @@
-name: main branch auto ci script
+name: main branch auto ci-cd script
 
 on: # 아래 job을 실행시킬 상황
   push:
@@ -20,3 +20,4 @@ jobs:
           script: | # 실행할 스크립트
             cd /home/ubuntu/seoul-server
             git pull origin main
+            ./cd.sh
