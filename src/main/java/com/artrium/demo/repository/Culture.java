@@ -13,11 +13,13 @@ public class Culture {
     @Column(name = "culture_id", updatable = false)
     private Long id;
 
+    @Column(columnDefinition = "LONGTEXT")
     private String category;
 
-    @Column(name = "gu_name", updatable = false)
+    @Column(name = "gu_name", updatable = false, columnDefinition="LONGTEXT")
     private String guName;
 
+    @Column(columnDefinition = "LONGTEXT")
     private String title;
 
     @Column(name = "start_date", updatable = false)
@@ -26,16 +28,22 @@ public class Culture {
     @Column(name = "end_date", updatable = false)
     private LocalDateTime endDate;
 
+    @Column(columnDefinition = "LONGTEXT")
     private String place;
 
+    @Column(columnDefinition = "LONGTEXT")
     private String org_name; // 기관명
 
+    @Column(columnDefinition = "LONGTEXT")
     private String target; // 이용대상
 
+    @Column(columnDefinition = "LONGTEXT")
     private String fee; // 가격
 
+    @Column(columnDefinition = "LONGTEXT")
     private String homepage; // 홈페이지 링크
 
+    @Column(columnDefinition = "LONGTEXT")
     private String img; // 대표 이미지
 
     private Double lot; // 위도
