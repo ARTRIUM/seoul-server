@@ -36,12 +36,12 @@ public class CultureParse {
         }
     }
     public static void getConnection() throws SQLException {
-//        String url = "jdbc:h2:mem:test";
-//        String id = "sa";
-//        String pass = "";
-        String url = "jdbc:mysql://mydatabase.czogkye88fqc.ap-northeast-2.rds.amazonaws.com/seoul";
-        String id = "artrium";
-        String pass = "12345678";
+        String url = "jdbc:h2:mem:test";
+        String id = "sa";
+        String pass = "";
+//        String url = "jdbc:mysql://mydatabase.czogkye88fqc.ap-northeast-2.rds.amazonaws.com/seoul";
+//        String id = "artrium";
+//        String pass = "12345678";
         conn = DriverManager.getConnection(url,id,pass);
         System.out.println(conn);
     }
@@ -74,8 +74,15 @@ public class CultureParse {
                 String img = tmp[12];
                 Date startDate = Date.valueOf(LocalDate.parse(tmp[15].split(" ")[0], DateTimeFormatter.ISO_DATE));
                 Date endDate = Date.valueOf(LocalDate.parse(tmp[16].split(" ")[0], DateTimeFormatter.ISO_DATE));
-                double lot = Double.parseDouble(tmp[18]);
-                double lat = Double.parseDouble(tmp[19]);
+
+                double lot, lat;
+                try {
+                    lot = Double.parseDouble(tmp[18]);
+                    lat = Double.parseDouble(tmp[19]);
+                } catch (Exception e) {
+                    continue;
+                }
+
                 boolean isFree = tmp[20].equals("무료");
 
                 pstmt.setString(1, category);
