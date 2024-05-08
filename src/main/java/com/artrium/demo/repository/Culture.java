@@ -1,11 +1,16 @@
 package com.artrium.demo.repository;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
+@Getter
+@NoArgsConstructor
+@Table(name = "culture")
 public class Culture {
 
     @Id
