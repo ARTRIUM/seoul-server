@@ -3,6 +3,7 @@ package com.artrium.demo.utils;
 import jakarta.annotation.PostConstruct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
@@ -16,8 +17,17 @@ import java.time.format.DateTimeFormatter;
 @Component
 public class CultureParse {
     private static final Logger log = LoggerFactory.getLogger(CultureParse.class);
-    public static PreparedStatement pstmt;
-    public static Connection conn;
+    public PreparedStatement pstmt;
+    public Connection conn;
+
+    @Value("${spring.datasource.url}")
+    private String url;
+
+    @Value("${spring.datasource.username}")
+    private String id;
+
+    @Value("${spring.datasource.password}")
+    private String password;
 
     @PostConstruct
     public void insertCulture() throws IOException, SQLException {
@@ -26,7 +36,7 @@ public class CultureParse {
         insertQuery();
     }
 
-    public static void JdbcConnect(){
+    public void JdbcConnect(){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             System.out.println("OK!");
@@ -35,19 +45,13 @@ public class CultureParse {
             System.exit(0);
         }
     }
-    public static void getConnection() throws SQLException {
-        String url = "jdbc:h2:mem:test";
-        String id = "sa";
-        String pass = "";
-//        String url = "jdbc:mysql://mydatabase.czogkye88fqc.ap-northeast-2.rds.amazonaws.com/seoul";
-//        String id = "artrium";
-//        String pass = "12345678";
-        conn = DriverManager.getConnection(url,id,pass);
+    public void getConnection() throws SQLException {
+        conn = DriverManager.getConnection(url, id, password);
         System.out.println(conn);
     }
 
-    public static void insertQuery() throws IOException {
-        String path = "/Users/doyoon/Downloads/서울시 문화행사 정보.csv";
+    public void insertQuery() throws IOException {
+        String path = System.getProperty("user.dir") + "/culture.csv";
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(path), "EUC-KR"));
         String line = null;
 
