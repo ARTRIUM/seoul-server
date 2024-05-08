@@ -1,6 +1,7 @@
 package com.artrium.demo.utils;
 
 import jakarta.annotation.PostConstruct;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,9 +16,11 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 @Component
+@Slf4j
 public class CultureParse {
     private static final Logger log = LoggerFactory.getLogger(CultureParse.class);
     public PreparedStatement pstmt;
+    public Statement stat;
     public Connection conn;
 
     @Value("${spring.datasource.url}")
@@ -33,13 +36,15 @@ public class CultureParse {
     public void insertCulture() throws IOException, SQLException {
         JdbcConnect();
         getConnection();
-        insertQuery();
+        if (!checkQuery()) {
+            insertQuery();
+        }
     }
 
     public void JdbcConnect(){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            System.out.println("OK!");
+            log.info("Connection Success");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
             System.exit(0);
@@ -47,7 +52,27 @@ public class CultureParse {
     }
     public void getConnection() throws SQLException {
         conn = DriverManager.getConnection(url, id, password);
-        System.out.println(conn);
+        log.info("connection: {}", conn);
+    }
+
+    public boolean checkQuery() {
+        try {
+            stat = conn.createStatement();
+
+            String query = "select count(*) as cnt from culture";
+            ResultSet rs = stat.executeQuery(query);
+
+            int count = 0;
+            if (rs.next()) {
+                count = rs.getInt("cnt");
+            }
+
+            return count != 0;
+        } catch (SQLException e) {
+            log.error("checkQuery error", e);
+        }
+
+        return false;
     }
 
     public void insertQuery() throws IOException {
@@ -106,8 +131,8 @@ public class CultureParse {
 
                 pstmt.executeUpdate();
             }
-        } catch(SQLException ee){
-            System.err.println("error = " + ee.toString());
+        } catch(SQLException e){
+            log.error("insertQuery error", e);
         }
     }
 
