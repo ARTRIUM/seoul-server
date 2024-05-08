@@ -1,6 +1,7 @@
 package com.artrium.demo.repository;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +11,7 @@ import java.util.List;
 @Entity
 @Getter
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "culture")
 public class Culture {
 
@@ -37,7 +39,7 @@ public class Culture {
     private String place;
 
     @Column(columnDefinition = "LONGTEXT")
-    private String org_name; // 기관명
+    private String orgName; // 기관명
 
     @Column(columnDefinition = "LONGTEXT")
     private String target; // 이용대상
