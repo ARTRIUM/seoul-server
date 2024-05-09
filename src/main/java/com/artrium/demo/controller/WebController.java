@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -24,11 +25,16 @@ public class WebController {
     private final CultureService cultureService;
 
     @RequestMapping("/")
-    public String home(@PageableDefault(page=0, size=15) Pageable pageable, Model model) {
-        final Page<CultureInfo> cultureInfos = cultureService.getCultureInfos("", pageable);
+    public String home(
+            @PageableDefault(page=0, size=15) Pageable pageable,
+            @RequestParam(defaultValue="강남구") String guName,
+            Model model
+    ) {
+        final Page<CultureInfo> cultureInfos = cultureService.getCultureInfos(guName, pageable);
 
         model.addAttribute("cultureInfos", cultureInfos);
-        model.addAttribute("pageSize", cultureInfos.getSize());
+        model.addAttribute("pageTotalNumber", Math.min(9, cultureInfos.getTotalPages()));
+        model.addAttribute("pageCurrentNumber", cultureInfos.getNumber());
 
         return "index";
     }
