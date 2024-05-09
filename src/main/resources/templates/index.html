@@ -8,6 +8,7 @@
   <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
   <!-- Bootstrap icons-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet">
   <!-- Core theme CSS (includes Bootstrap)-->
   <link href="/css/styles.css" rel="stylesheet" />
 </head>
@@ -42,6 +43,39 @@
     </div>
   </div>
 </header>
+
+<nav class="gu-menu">
+  <a href="#" class="gu-menu-item menu-active" active-color="orange">강남구</a>
+  <a href="#" class="gu-menu-item" active-color="green">강동구</a>
+  <a href="#" class="gu-menu-item" active-color="blue">강서구</a>
+  <a href="#" class="gu-menu-item" active-color="red">강북구</a>
+  <a href="#" class="gu-menu-item" active-color="rebeccapurple">관악구</a>
+  <a href="#" class="gu-menu-item" active-color="orange">광진구</a>
+  <a href="#" class="gu-menu-item" active-color="green">구로구</a>
+  <a href="#" class="gu-menu-item" active-color="blue">금천구</a>
+  <a href="#" class="gu-menu-item" active-color="red">노원구</a>
+  <a href="#" class="gu-menu-item" active-color="rebeccapurple">동대문구</a>
+  <a href="#" class="gu-menu-item" active-color="blue">도봉구</a>
+  <a href="#" class="gu-menu-item" active-color="red">동작구</a>
+  <a href="#" class="gu-menu-item" active-color="rebeccapurple">마포구</a>
+  <span class="nav-indicator"></span>
+</nav>
+<nav class="gu-menu">
+  <a href="#" class="gu-menu-item" active-color="rebeccapurple">서대문구</a>
+  <a href="#" class="gu-menu-item" active-color="orange">성동구</a>
+  <a href="#" class="gu-menu-item" active-color="green">성북구</a>
+  <a href="#" class="gu-menu-item" active-color="blue">서초구</a>
+  <a href="#" class="gu-menu-item" active-color="red">송파구</a>
+  <a href="#" class="gu-menu-item" active-color="rebeccapurple">영등포구</a>
+  <a href="#" class="gu-menu-item" active-color="orange">용산구</a>
+  <a href="#" class="gu-menu-item" active-color="green">양천구</a>
+  <a href="#" class="gu-menu-item" active-color="blue">은평구</a>
+  <a href="#" class="gu-menu-item" active-color="red">종로구</a>
+  <a href="#" class="gu-menu-item" active-color="rebeccapurple">중구</a>
+  <a href="#" class="gu-menu-item" active-color="blue">중랑구</a>
+  <span class="nav-indicator"></span>
+</nav>
+
 
 <div class="page_wrap">
   <div class="page_nation" th:each="index : ${#numbers.sequence(0, pageTotalNumber - 1)}">
@@ -112,12 +146,7 @@
 </footer>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<!--<script src="/js/scripts.js"></script>-->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<!-- * *                               SB Forms JS                               * *-->
-<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+<script  src="/js/script.js"></script>
 </body>
 </html>
