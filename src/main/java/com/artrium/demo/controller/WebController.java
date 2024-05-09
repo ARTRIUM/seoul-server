@@ -33,10 +33,10 @@ public class WebController {
         return "index";
     }
 
-    @RequestMapping("/cultures/{id}")
-    public String getCultureDetail(@PathVariable("id") Long cultureId, Pageable pageable, Model model) {
-        log.error("test: " + cultureId);
-        model.addAttribute("cultureInfo", cultureService.getCultureDetail(cultureId));
-        return "detail";
+    @RequestMapping("/cultures/{cultureId}")
+    public String getCultureDetail(@PathVariable("cultureId") Long cultureId, Pageable pageable, Model model) {
+        System.out.println("cultureId" + cultureId);
+        model.addAttribute("culture", cultureService.getCultureDetail(cultureId));
+        return "culture/detailPage";
     }
 }
