@@ -1,5 +1,6 @@
 package com.artrium.demo.service;
 
+import com.artrium.demo.dto.CultureDetailDTO;
 import com.artrium.demo.dto.CultureInfo;
 import com.artrium.demo.repository.Culture;
 import com.artrium.demo.repository.CultureRepository;
@@ -30,8 +31,8 @@ public class CultureService {
                 .toList();
     }
 
-    public Culture getCultureDetail(Long cultureId) {
+    public CultureDetailDTO getCultureDetail(Long cultureId) {
         Optional<Culture> culture = cultureRepository.findById(cultureId);
-        return culture.get();
+        return new CultureDetailDTO(culture.get());
     }
 }
