@@ -21,6 +21,7 @@ public class CultureService {
     public List<CultureInfo> getCultureInfos(String guName, Pageable pageable) {
         return cultureRepository.findByGuName(guName, pageable).stream()
                 .map(culture -> new CultureInfo(
+                        culture.getId(),
                         culture.getTitle(),
                         culture.getGuName(),
                         culture.getImg(),

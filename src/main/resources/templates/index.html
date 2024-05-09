@@ -54,8 +54,8 @@
         <!-- 타이틀 -->
         <h2 class="h4 fw-bolder" th:text="${cultureInfo.title}"></h2>
         <!-- 상세보기 버튼 -->
-        <a class="text-decoration-none" href="#!">
-          Call to action
+        <a class="text-decoration-none" th:href="@{/cultures/{id}(id=${cultureInfo.id})}">
+          상세보기
           <i class="bi bi-arrow-right"></i>
         </a>
       </div>
