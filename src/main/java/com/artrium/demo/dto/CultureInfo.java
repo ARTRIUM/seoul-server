@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CultureInfo {
-
+    private Long id;      // id
     private String title; // 공연/행사명
     private String guName; // 구 이름
     private String image; // 대표 이미지
