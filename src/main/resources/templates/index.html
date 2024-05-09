@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -47,19 +47,17 @@
   <div class="container px-5 my-5">
     <div class="row gx-5">
       <div class="col-lg-4 mb-5 mb-lg-0">
-        <tr th:each="cultureInfo : ${cultureInfos}">
-          <!-- 이미지 -->
-          <div class="tab-img">
-            <img th:src="${cultureInfo.image}" height="500" width="350">
-          </div>
-          <!-- 타이틀 -->
-          <h2 class="h4 fw-bolder" th:text="${cultureInfo.title}"></h2>
-          <!-- 상세보기 버튼 -->
-          <a class="text-decoration-none" href="#!">
-            Call to action
-            <i class="bi bi-arrow-right"></i>
-          </a>
-        </tr>
+        <!-- 이미지 -->
+        <div class="tab-img">
+          <img th:src="${cultureInfos[0].image}">
+        </div>
+        <!-- 타이틀 -->
+        <h2 class="h4 fw-bolder" th:text="${cultureInfos[0].title}"></h2>
+        <!-- 상세보기 버튼 -->
+        <a class="text-decoration-none" href="#!">
+          Call to action
+          <i class="bi bi-arrow-right"></i>
+        </a>
       </div>
     </div>
   </div>
