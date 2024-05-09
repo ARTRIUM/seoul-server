@@ -28,7 +28,8 @@ public class WebController {
         final Page<CultureInfo> cultureInfos = cultureService.getCultureInfos("", pageable);
 
         model.addAttribute("cultureInfos", cultureInfos);
-        model.addAttribute("pageSize", cultureInfos.getSize());
+        model.addAttribute("pageTotalNumber", Math.min(9, cultureInfos.getTotalPages()));
+        model.addAttribute("pageCurrentNumber", cultureInfos.getNumber());
 
         return "index";
     }
