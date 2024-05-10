@@ -45,41 +45,41 @@
 </header>
 
 <nav class="gu-menu">
-  <a href="#" class="gu-menu-item menu-active" active-color="orange">강남구</a>
-  <a href="#" class="gu-menu-item" active-color="green">강동구</a>
-  <a href="#" class="gu-menu-item" active-color="blue">강서구</a>
-  <a href="#" class="gu-menu-item" active-color="red">강북구</a>
-  <a href="#" class="gu-menu-item" active-color="rebeccapurple">관악구</a>
-  <a href="#" class="gu-menu-item" active-color="orange">광진구</a>
-  <a href="#" class="gu-menu-item" active-color="green">구로구</a>
-  <a href="#" class="gu-menu-item" active-color="blue">금천구</a>
-  <a href="#" class="gu-menu-item" active-color="red">노원구</a>
-  <a href="#" class="gu-menu-item" active-color="rebeccapurple">동대문구</a>
-  <a href="#" class="gu-menu-item" active-color="blue">도봉구</a>
-  <a href="#" class="gu-menu-item" active-color="red">동작구</a>
-  <a href="#" class="gu-menu-item" active-color="rebeccapurple">마포구</a>
+  <a th:href="@{/(page=0, gu_name='강남구')}" class="gu-menu-item" th:classappend="${currentGuName} == '강남구' ? 'menu-active' : ''" active-color="orange">강남구</a>
+  <a th:href="@{/(page=0, gu_name='강동구')}" class="gu-menu-item" th:classappend="${currentGuName} == '강동구' ? 'menu-active' : ''" active-color="green">강동구</a>
+  <a th:href="@{/(page=0, gu_name='강서구')}" class="gu-menu-item" th:classappend="${currentGuName} == '강서구' ? 'menu-active' : ''" active-color="blue">강서구</a>
+  <a th:href="@{/(page=0, gu_name='강북구')}" class="gu-menu-item" th:classappend="${currentGuName} == '강북구' ? 'menu-active' : ''" active-color="red">강북구</a>
+  <a th:href="@{/(page=0, gu_name='관악구')}" class="gu-menu-item" th:classappend="${currentGuName} == '관악구' ? 'menu-active' : ''" active-color="rebeccapurple">관악구</a>
+  <a th:href="@{/(page=0, gu_name='광진구')}" class="gu-menu-item" th:classappend="${currentGuName} == '광진구' ? 'menu-active' : ''" active-color="orange">광진구</a>
+  <a th:href="@{/(page=0, gu_name='구로구')}" class="gu-menu-item" th:classappend="${currentGuName} == '구로구' ? 'menu-active' : ''" active-color="green">구로구</a>
+  <a th:href="@{/(page=0, gu_name='금천구')}" class="gu-menu-item" th:classappend="${currentGuName} == '금천구' ? 'menu-active' : ''" active-color="blue">금천구</a>
+  <a th:href="@{/(page=0, gu_name='노원구')}" class="gu-menu-item" th:classappend="${currentGuName} == '노원구' ? 'menu-active' : ''" active-color="red">노원구</a>
+  <a th:href="@{/(page=0, gu_name='동대문구')}" class="gu-menu-item" th:classappend="${currentGuName} == '동대문구' ? 'menu-active' : ''" active-color="rebeccapurple">동대문구</a>
+  <a th:href="@{/(page=0, gu_name='도봉구')}" class="gu-menu-item" th:classappend="${currentGuName} == '도봉구' ? 'menu-active' : ''" active-color="blue">도봉구</a>
+  <a th:href="@{/(page=0, gu_name='동작구')}" class="gu-menu-item" th:classappend="${currentGuName} == '동작구' ? 'menu-active' : ''" active-color="red">동작구</a>
+  <a th:href="@{/(page=0, gu_name='마포구')}" class="gu-menu-item" th:classappend="${currentGuName} == '마포구' ? 'menu-active' : ''" active-color="rebeccapurple">마포구</a>
   <span class="nav-indicator"></span>
 </nav>
 <nav class="gu-menu">
-  <a href="#" class="gu-menu-item" active-color="rebeccapurple">서대문구</a>
-  <a href="#" class="gu-menu-item" active-color="orange">성동구</a>
-  <a href="#" class="gu-menu-item" active-color="green">성북구</a>
-  <a href="#" class="gu-menu-item" active-color="blue">서초구</a>
-  <a href="#" class="gu-menu-item" active-color="red">송파구</a>
-  <a href="#" class="gu-menu-item" active-color="rebeccapurple">영등포구</a>
-  <a href="#" class="gu-menu-item" active-color="orange">용산구</a>
-  <a href="#" class="gu-menu-item" active-color="green">양천구</a>
-  <a href="#" class="gu-menu-item" active-color="blue">은평구</a>
-  <a href="#" class="gu-menu-item" active-color="red">종로구</a>
-  <a href="#" class="gu-menu-item" active-color="rebeccapurple">중구</a>
-  <a href="#" class="gu-menu-item" active-color="blue">중랑구</a>
+  <a th:href="@{/(page=0, gu_name='서대문구')}" class="gu-menu-item" th:classappend="${currentGuName} == '서대문구' ? 'menu-active' : ''" active-color="rebeccapurple">서대문구</a>
+  <a th:href="@{/(page=0, gu_name='성동구')}" class="gu-menu-item" th:classappend="${currentGuName} == '성동구' ? 'menu-active' : ''" active-color="orange">성동구</a>
+  <a th:href="@{/(page=0, gu_name='성북구')}" class="gu-menu-item" th:classappend="${currentGuName} == '성북구' ? 'menu-active' : ''" active-color="green">성북구</a>
+  <a th:href="@{/(page=0, gu_name='서초구')}" class="gu-menu-item" th:classappend="${currentGuName} == '서초구' ? 'menu-active' : ''" active-color="blue">서초구</a>
+  <a th:href="@{/(page=0, gu_name='송파구')}" class="gu-menu-item" th:classappend="${currentGuName} == '송파구' ? 'menu-active' : ''" active-color="red">송파구</a>
+  <a th:href="@{/(page=0, gu_name='영등포구')}" class="gu-menu-item" th:classappend="${currentGuName} == '영등포구' ? 'menu-active' : ''" active-color="rebeccapurple">영등포구</a>
+  <a th:href="@{/(page=0, gu_name='용산구')}" class="gu-menu-item" th:classappend="${currentGuName} == '용산구' ? 'menu-active' : ''" active-color="orange">용산구</a>
+  <a th:href="@{/(page=0, gu_name='양천구')}" class="gu-menu-item" th:classappend="${currentGuName} == '양천구' ? 'menu-active' : ''" active-color="green">양천구</a>
+  <a th:href="@{/(page=0, gu_name='은평구')}" class="gu-menu-item" th:classappend="${currentGuName} == '은평구' ? 'menu-active' : ''" active-color="blue">은평구</a>
+  <a th:href="@{/(page=0, gu_name='종로구')}" class="gu-menu-item" th:classappend="${currentGuName} == '종로구' ? 'menu-active' : ''" active-color="red">종로구</a>
+  <a th:href="@{/(page=0, gu_name='중구')}" class="gu-menu-item" th:classappend="${currentGuName} == '중구' ? 'menu-active' : ''" active-color="rebeccapurple">중구</a>
+  <a th:href="@{/(page=0, gu_name='중랑구')}" class="gu-menu-item" th:classappend="${currentGuName} == '중랑구' ? 'menu-active' : ''" active-color="blue">중랑구</a>
   <span class="nav-indicator"></span>
 </nav>
 
 
 <div class="page_wrap">
   <div class="page_nation" th:each="index : ${#numbers.sequence(0, pageTotalNumber - 1)}">
-    <a th:class="${index == pageCurrentNumber} ? 'active'" th:href="@{/(page=${index})}" th:utext="${index + 1}"></a>
+    <a th:class="${index == pageCurrentNumber} ? 'active'" th:href="@{/(page=${index}, gu_name=${currentGuName})}" th:utext="${index + 1}"></a>
   </div>
 </div>
 

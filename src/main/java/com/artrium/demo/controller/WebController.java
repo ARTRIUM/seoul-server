@@ -23,7 +23,7 @@ public class WebController {
     @RequestMapping("/")
     public String home(
             @PageableDefault(page=0, size=15) Pageable pageable,
-            @RequestParam(defaultValue="강남구") String guName,
+            @RequestParam(name="gu_name", defaultValue="강남구") String guName,
             Model model
     ) {
         final Page<CultureInfo> cultureInfos = cultureService.getCultureInfos(guName, pageable);
@@ -31,6 +31,7 @@ public class WebController {
         model.addAttribute("cultureInfos", cultureInfos);
         model.addAttribute("pageTotalNumber", Math.min(9, cultureInfos.getTotalPages()));
         model.addAttribute("pageCurrentNumber", cultureInfos.getNumber());
+        model.addAttribute("currentGuName", guName);
 
         return "index";
     }

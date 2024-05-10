@@ -3,7 +3,7 @@ const items = document.querySelectorAll('.gu-menu-item');
 
 function handleIndicator(el) {
   items.forEach(item => {
-    item.classList.remove('gu-menu-active');
+    item.classList.remove('menu-active');
     item.removeAttribute('style');
   });
 
